@@ -2,8 +2,8 @@ import React from "react";
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import MoviesPage from "./pages/MoviesPage";
 import {Genres, Search} from "./components";
+import {MoviesPage} from "./pages";
 
 const router = createBrowserRouter([
     {
