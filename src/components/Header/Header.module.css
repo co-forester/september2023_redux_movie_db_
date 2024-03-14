@@ -1,3 +1,50 @@
-.Header{
-
+.HeaderLight{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #7f7fa8;
+    height: 50px;
+}
+.HeaderLight a{
+    text-decoration: none;
+    color: #f9e505;
+    font-size: 25px;
+}
+.HeaderLight a:hover{
+    text-decoration: underline;
+    color: #f75050;
+    font-size: 28px;
+}
+.HeaderLight a:active{
+    text-decoration: none;
+    color: #8ceff8;
+}
+.HeaderDark{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #41419b;
+    height: 50px;
+}
+.HeaderDark a{
+    text-decoration: none;
+    color: #f8f85c;
+    font-size: 25px;
+}
+.HeaderDark a:hover{
+    text-decoration: none;
+    color: #fc6161;
+    font-size: 28px;
+}
+.HeaderDark a:active{
+    text-decoration: none;
+    color: #013034;
+}
+.buttonBox{
+    padding-left: 300px;
+}
+.button{
+    border-radius: 10px;
+    box-shadow: #353434 4px 4px 4px;
+    background-color: #f7f7b2;
 }

@@ -5,13 +5,13 @@ import css from './Header.module.css'
 
 const Header = () => {
     return (
-        <div className={css.Header}>
-            <button className={css.Button}>back</button>
-            <NavLink to={'movies/search'}>Search</NavLink>
-            <NavLink to={'movies/moviesList'}>Movies</NavLink>
-            <NavLink to={'movies/genres'}>Genres</NavLink>
-            <div className={css.ButtonBox}>
-                <button className={css.Button}>Theme</button>
+        <div className={css.HeaderDark}>
+            <button className={css.button}>back</button>
+            <NavLink to={'/search'}>Search</NavLink>
+            <NavLink to={'/moviesList'}>Movies</NavLink>
+            <NavLink to={'/genres'}>Genres</NavLink>
+            <div className={css.buttonBox}>
+                <button className={css.button}>Theme</button>
             </div>
         </div>
     );
