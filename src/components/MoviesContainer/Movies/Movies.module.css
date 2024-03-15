@@ -1,3 +1,9 @@
 .Movies{
-
+    display: flex;
+    flex-wrap: wrap;
+}
+.MoviesListBox{
+    display: flex;
+    margin: 0 11% 0 11%;
+    width: 78%;
 }

@@ -1,3 +1,50 @@
 .Movie{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 21px;
+    width: calc(19% - 4px);
+    color: #fb1616;
+}
 
+
+
+
+.MoviesDark{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 21px;
+    width: calc(19% - 4px);
+    color: #fb1616;
+}
+.Movies:hover{
+    cursor: pointer;
+    background-color: #c4c0c0;
+}
+.MoviesPoster img{
+    width: 100%;
+}
+.MoviesLight{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 21px;
+    width: calc(19% - 4px);
+    color: #f1f599;
+}
+.RatingStars{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 66px;
+    padding-bottom: 8px;
+}
+.Rating{
+    display: flex;
+    align-items: center;
+}
+.Legend{
+    color: #5f5e5e;
+    font-size: 8px;
 }
