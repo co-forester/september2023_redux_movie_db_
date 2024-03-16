@@ -7,7 +7,6 @@ import {IGenres} from "../../interfaces/genresInterface";
 
 interface IState {
     genres: IGenre[];
-    genreId: number;
     movies: IMovie[];
     page: number;
     total_pages: number;
@@ -16,7 +15,6 @@ interface IState {
 
 const initialState: IState = {
     genres: null,
-    genreId: null,
     movies: [],
     page: null,
     total_pages: null,
@@ -36,11 +34,11 @@ const getAll = createAsyncThunk<IMovies, { page: number }>(
     }
 )
 
-const getAllByGenre = createAsyncThunk<IMoviesGenre, { genreIds: number, page: number }>(
+const getAllByGenre = createAsyncThunk<IMoviesGenre, { genreId: number, page: number }>(
     '/movieSlice/getALLByGenre',
-    async ({genreIds, page}, {rejectWithValue}) => {
+    async ({genreId, page}, {rejectWithValue}) => {
         try {
-            const {data} = await movieService.getAllByGenre(genreIds, page);
+            const {data} = await movieService.getAllByGenre(genreId, page);
             return data
         } catch (e) {
             const err = e as AxiosError;
@@ -53,7 +51,8 @@ const getAllGenres = createAsyncThunk<IGenres, void>(
     '/movieSlice/getAllGenres',
     async (_, {rejectWithValue}) => {
         try {
-            const {data} = await genreService.getAll()
+            const {data} = await genreService.getAll();
+            return data
         }catch (e) {
             const err = e as AxiosError;
             return rejectWithValue(err.response.data)

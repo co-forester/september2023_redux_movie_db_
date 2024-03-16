@@ -1,3 +1,32 @@
-.Genres{
+.ButGenreDark{
+    display: flex;
+    color: #f1f599;
+    background: #585575;
+    box-shadow: #6969c2 5px 5px 5px ;
+    margin: 3px;
+    padding: 3px 6px 3px 6px;
+    border-radius: 6px;
+}
+.ButGenreLight{
+    display: flex;
+    background: #908bbb;
+    box-shadow: #41419b 3px 3px 3px ;
+    margin: 3px;
+    padding: 3px 6px 3px 6px;
+    border-radius: 6px;
+}
+.ButGenreLight:hover{
+    cursor: pointer;
+    background-color: #a6a5a5;
+}
+.ButGenreDark[class='active']{
+    cursor: pointer;
+    background-color: #6f6f6f;
+}
+.ButGenreLight[class='active']{
 
+    background-color: #665478;
+}
+.ButGenreDark:active{
+    background-color: #9c9b9b;
 }
