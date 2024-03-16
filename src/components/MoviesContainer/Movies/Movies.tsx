@@ -1,21 +1,15 @@
-import React, {useEffect} from 'react';
-import {useSearchParams} from "react-router-dom";
+import React, {FC, PropsWithChildren} from 'react';
 
 import css from './Movies.module.css'
 import {Movie} from "../Movie";
-import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {movieActions} from "../../../Redux";
 import {Pagination} from "../../Pagination";
+import {IMovie} from "../../../interfaces";
 
-const Movies = () => {
-    const {movies} = useAppSelector(state => state.movies);
-    const [query] = useSearchParams({page:'1'});
-    const dispatch = useAppDispatch();
-    const page = + query.get('page')
+interface IPops extends PropsWithChildren{
+    movies: IMovie[]
+}
 
-    useEffect(() => {
-        dispatch(movieActions.getAll({page}))
-    }, [page]);
+const Movies: FC<IPops> = ({movies}) => {
 
     return (
         <div className={css.MoviesListBox}>

@@ -1,4 +1,5 @@
 .MoviesPage{
+    background: #322c6d;
     display: flex;
     flex-direction: column;
     justify-content: center;

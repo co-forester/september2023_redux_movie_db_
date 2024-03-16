@@ -1,8 +1,10 @@
 .Movies{
+    background: #1d1a40;
     display: flex;
     flex-wrap: wrap;
 }
 .MoviesListBox{
+    /*background: #2a265d;*/
     display: flex;
     flex-direction: column;
     margin: 0 11% 0 11%;

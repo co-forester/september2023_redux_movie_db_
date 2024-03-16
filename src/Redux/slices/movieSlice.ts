@@ -2,12 +2,12 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {AxiosError} from "axios";
 
 import {IGenre, IMovie, IMovies, IMoviesGenre} from "../../interfaces";
-import {movieService} from "../../services";
+import {genreService, movieService} from "../../services";
 import {IGenres} from "../../interfaces/genresInterface";
 
 interface IState {
-    genres: IGenres;
-    genre: IGenre
+    genres: IGenre[];
+    genreId: number;
     movies: IMovie[];
     page: number;
     total_pages: number;
@@ -16,7 +16,7 @@ interface IState {
 
 const initialState: IState = {
     genres: null,
-    genre: null,
+    genreId: null,
     movies: [],
     page: null,
     total_pages: null,
@@ -49,7 +49,17 @@ const getAllByGenre = createAsyncThunk<IMoviesGenre, { genreIds: number, page: n
     }
 )
 
-
+const getAllGenres = createAsyncThunk<IGenres, void>(
+    '/movieSlice/getAllGenres',
+    async (_, {rejectWithValue}) => {
+        try {
+            const {data} = await genreService.getAll()
+        }catch (e) {
+            const err = e as AxiosError;
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
 
 const movieSlice = createSlice({
     name: 'movieSlice',
@@ -57,6 +67,9 @@ const movieSlice = createSlice({
     reducers: {},
     extraReducers: builder =>
         builder
+            .addCase(getAllGenres.fulfilled, (state, action) => {
+                state.genres = action.payload.genres
+            })
             .addCase(getAllByGenre.fulfilled, (state, action) => {
                 state.movies = action.payload.results;
                 state.page = action.payload.page;
@@ -67,7 +80,6 @@ const movieSlice = createSlice({
                 state.page = action.payload.page;
                 state.total_pages = action.payload.total_pages
             })
-
 })
 
 const {reducer: movieReducer, actions} = movieSlice;
@@ -75,7 +87,8 @@ const {reducer: movieReducer, actions} = movieSlice;
 const movieActions = {
     ...actions,
     getAll,
-    getAllByGenre
+    getAllByGenre,
+    getAllGenres
 }
 
 export {movieReducer, movieActions}
