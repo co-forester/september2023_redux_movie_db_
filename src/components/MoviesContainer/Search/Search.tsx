@@ -8,7 +8,7 @@ import {Movies} from "../Movies";
 
 const Search = () => {
     const {movies} = useAppSelector(state => state.movies);
-    const [query, setQuery] = useSearchParams({query: '', page:'1'});
+    const [query, setQuery] = useSearchParams({query: 'star', page:'1'});
     const dispatch = useAppDispatch();
     const page = + query.get('page');
     const keyWord = query.get('query')
