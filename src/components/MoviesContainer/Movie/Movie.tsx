@@ -1,19 +1,21 @@
 import React, {FC, PropsWithChildren} from 'react';
+import {Rating, Typography} from "@mui/material";
 
 import css from './Movie.module.css'
 import {IMovie} from "../../../interfaces";
 import {posterURL} from "../../../constants";
-import {Rating, Typography} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 interface IProps extends PropsWithChildren{
     movie: IMovie
 }
 
 export const Movie: FC<IProps>= ({movie}) => {
-    const {poster_path, title, original_title, vote_average} = movie
+    const {poster_path, title, original_title, vote_average} = movie;
+    const navigate = useNavigate();
 
     const toMoviesListCard = () => {
-
+        navigate('/card', {state: {movie, poster}})
     }
     const poster: string = `${posterURL}/${poster_path}/&api_key=d031e7f38834f2d640ae4a98140c550f`;
     const vote: number = vote_average / 2;

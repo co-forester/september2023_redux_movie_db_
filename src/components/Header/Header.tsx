@@ -3,16 +3,17 @@ import {NavLink, useNavigate} from "react-router-dom";
 import {Avatar} from "@mui/material";
 
 import css from './Header.module.css'
-import {useAppSelector} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 
 const Header = () => {
-    const {triggerTheme} = useAppSelector(state => state.movies);
-    let navigate = useNavigate();
+    const theme = useAppSelector(state => state.movies);
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
     const back = () => {
         navigate(-1)
     }
-    const switchers = () => {
-        // triggerTheme (prev => !prev)
+    const switchTheme = () => {
+        // dispatch(changeTheme(theme === 'light' ? 'dark' : 'light'));
     }
     return (
         <div className={css.HeaderDark}>
@@ -21,7 +22,7 @@ const Header = () => {
             <NavLink to={'moviesPage/moviesList'}>Movies</NavLink>
             <NavLink to={'moviesPage/genres'}>Genres</NavLink>
             <div className={css.ButtonBox}>
-                <button className={css.Button} onClick={switchers}>Theme</button>
+                <button className={css.Button} onClick={switchTheme}>Theme</button>
             </div>
             <Avatar alt="Remy Sharp" src="./icon8-gjbcr.svg"/>
         </div>

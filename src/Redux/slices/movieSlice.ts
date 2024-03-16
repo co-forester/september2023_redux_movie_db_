@@ -10,7 +10,7 @@ interface IState {
     movies: IMovie[];
     page: number;
     total_pages: number;
-    triggerTheme: boolean
+    theme: boolean
 }
 
 const initialState: IState = {
@@ -18,7 +18,7 @@ const initialState: IState = {
     movies: [],
     page: null,
     total_pages: null,
-    triggerTheme: null
+    theme: null
 }
 
 const getAll = createAsyncThunk<IMovies, { page: number }>(
@@ -52,6 +52,19 @@ const getAllGenres = createAsyncThunk<IGenres, void>(
     async (_, {rejectWithValue}) => {
         try {
             const {data} = await genreService.getAll();
+            return data
+        }catch (e) {
+            const err = e as AxiosError;
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
+
+const getKeyWord = createAsyncThunk<IMovies, {keyWord: string, page: number}>(
+    '/movieSlice/getKeyWord',
+    async ({keyWord, page}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getKeyWord(keyWord, page);
             return data
         }catch (e) {
             const err = e as AxiosError;
