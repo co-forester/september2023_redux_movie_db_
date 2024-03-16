@@ -1,3 +1,16 @@
-.Pagination{
-
+.CurrentPage{
+    margin: 0 4px 0 4px;
+}
+.ButPrev, .ButNext{
+    margin: 0 6px 0 6px;
+    border-radius: 6px;
+    box-shadow: #353434 4px 4px 4px;
+    background-color: #f7f7b2;
+    padding: 0 13px 0 13px;
+}
+.Pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  23px 13px 13px 13px;
 }

@@ -10,7 +10,7 @@
 
 
 
-.MoviesDark{
+.MovieDark{
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -18,14 +18,14 @@
     width: calc(19% - 4px);
     color: #fb1616;
 }
-.Movies:hover{
+.Movie:hover{
     cursor: pointer;
     background-color: #c4c0c0;
 }
-.MoviesPoster img{
+.MoviePoster img{
     width: 100%;
 }
-.MoviesLight{
+.MovieLight{
     display: flex;
     flex-direction: column;
     padding: 5px;

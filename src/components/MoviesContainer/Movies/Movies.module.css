@@ -4,6 +4,7 @@
 }
 .MoviesListBox{
     display: flex;
+    flex-direction: column;
     margin: 0 11% 0 11%;
     width: 78%;
 }
