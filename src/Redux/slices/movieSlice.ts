@@ -92,6 +92,11 @@ const movieSlice = createSlice({
                 state.page = action.payload.page;
                 state.total_pages = action.payload.total_pages
             })
+            .addCase(getKeyWord.fulfilled, (state, action) => {
+                state.movies = action.payload.results;
+                state.page = action.payload.page;
+                state.total_pages = action.payload.total_pages
+            })
 })
 
 const {reducer: movieReducer, actions} = movieSlice;
@@ -100,7 +105,8 @@ const movieActions = {
     ...actions,
     getAll,
     getAllByGenre,
-    getAllGenres
+    getAllGenres,
+    getKeyWord
 }
 
 export {movieReducer, movieActions}
