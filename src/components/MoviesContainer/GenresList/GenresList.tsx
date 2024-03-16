@@ -3,7 +3,6 @@ import {useSearchParams} from "react-router-dom";
 
 import css from './GenresList.module.css'
 import {Movies} from "../Movies";
-import {Pagination} from "../../Pagination";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
 import {movieActions} from "../../../Redux";
 import {Genre} from "../Genre";
@@ -19,20 +18,19 @@ const GenresList = () => {
         dispatch(movieActions.getAllGenres())
     }, []);
 
+    useEffect(() => {
+       dispatch(movieActions.getAllByGenre({genreId, page}))
+    }, [page, genreId, genres]);
+
     if (!genres || !Array.isArray(genres)) {
         return <div>No genres available</div>;
     }
-
-    useEffect(() => {
-       dispatch(movieActions.getAllByGenre({genreId, page}))
-    }, [page, genreId]);
 
     return (
         <div className={css.GenresList}>
             <div className={css.GenresMap}>
                 {genres.map(genre => <Genre key={genre.id} genre={genre}/>)}
             </div>
-            {/*<Pagination/>*/}
             <Movies movies={movies}/>
         </div>
     );
