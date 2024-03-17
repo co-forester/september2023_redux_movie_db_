@@ -9,16 +9,14 @@ interface IState {
     genres: IGenre[];
     movies: IMovie[];
     page: number;
-    total_pages: number;
-    theme: boolean
+    total_pages: number
 }
 
 const initialState: IState = {
     genres: null,
     movies: [],
     page: null,
-    total_pages: null,
-    theme: null
+    total_pages: null
 }
 
 const getAll = createAsyncThunk<IMovies, { page: number }>(
@@ -72,6 +70,8 @@ const getKeyWord = createAsyncThunk<IMovies, {keyWord: string, page: number}>(
         }
     }
 )
+
+
 
 const movieSlice = createSlice({
     name: 'movieSlice',

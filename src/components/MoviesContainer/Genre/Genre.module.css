@@ -19,6 +19,10 @@
     cursor: pointer;
     background-color: #a6a5a5;
 }
+.ButGenreDark:hover{
+    cursor: pointer;
+    background-color: #a6a5a5;
+}
 .ButGenreDark[class='active']{
     cursor: pointer;
     background-color: #6f6f6f;
