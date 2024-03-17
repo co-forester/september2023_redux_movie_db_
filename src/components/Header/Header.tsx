@@ -18,12 +18,12 @@ const Header = () => {
     }
     return (
         <div className={theme ? css.HeaderLight : css.HeaderDark}>
-            <button className={css.button} onClick={back}>back</button>
+            <button className={theme ? css.buttonLight : css.buttonDark} onClick={back}>back</button>
             <NavLink to={'moviesPage/search'}>Search</NavLink>
             <NavLink to={'moviesPage/moviesList'}>Movies</NavLink>
             <NavLink to={'moviesPage/genres'}>Genres</NavLink>
-            <div className={css.ButtonBox}>
-                <button className={css.Button} onClick={switchTheme}>{theme ? 'Theme light' : 'Theme dark' }</button>
+            <div className={css.buttonBox}>
+                <button className={theme ? css.buttonLight : css.buttonDark} onClick={switchTheme}>{theme ? 'Theme dark' : 'Theme light' }</button>
             </div>
             <Avatar alt="Remy Sharp" src="./icon8-gjbcr.svg"/>
         </div>

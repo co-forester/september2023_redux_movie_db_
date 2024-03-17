@@ -43,8 +43,14 @@
 .buttonBox{
     padding-left: 300px;
 }
-.button{
+.buttonLight{
     border-radius: 10px;
     box-shadow: #353434 4px 4px 4px;
     background-color: #f7f7b2;
 }
+.buttonDark{
+    border-radius: 10px;
+    box-shadow: #7979de 4px 4px 4px;
+    background-color: #aaaa82;
+}
+

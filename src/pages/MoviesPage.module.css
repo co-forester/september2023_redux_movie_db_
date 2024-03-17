@@ -1,4 +1,11 @@
-.MoviesPage{
+.MoviesPageLight{
+    background: #aba7c9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.MoviesPageDark{
     background: #322c6d;
     display: flex;
     flex-direction: column;

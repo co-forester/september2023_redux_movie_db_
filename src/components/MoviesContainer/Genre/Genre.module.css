@@ -1,4 +1,4 @@
-.ButGenreDark{
+.butGenreDark{
     display: flex;
     color: #f1f599;
     background: #585575;
@@ -7,7 +7,7 @@
     padding: 3px 6px 3px 6px;
     border-radius: 6px;
 }
-.ButGenreLight{
+.butGenreLight{
     display: flex;
     background: #908bbb;
     box-shadow: #41419b 3px 3px 3px ;
@@ -15,22 +15,22 @@
     padding: 3px 6px 3px 6px;
     border-radius: 6px;
 }
-.ButGenreLight:hover{
+.butGenreLight:hover{
     cursor: pointer;
     background-color: #a6a5a5;
 }
-.ButGenreDark:hover{
+.butGenreDark:hover{
     cursor: pointer;
     background-color: #a6a5a5;
 }
-.ButGenreDark[class='active']{
+.butGenreDark[class='active']{
     cursor: pointer;
     background-color: #6f6f6f;
 }
-.ButGenreLight[class='active']{
+.butGenreLight[class='active']{
 
     background-color: #665478;
 }
-.ButGenreDark:active{
+.butGenreDark:active{
     background-color: #9c9b9b;
 }

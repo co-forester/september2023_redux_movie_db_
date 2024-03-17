@@ -1,4 +1,4 @@
-.Movie{
+.MovieLight{
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -6,26 +6,18 @@
     width: calc(19% - 4px);
     color: #fb1616;
 }
-
-
-
-
-.MovieDark{
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    font-size: 21px;
-    width: calc(19% - 4px);
-    color: #fb1616;
-}
-.Movie:hover{
+.MovieLight:hover{
     cursor: pointer;
     background-color: #c4c0c0;
 }
-.MoviePoster img{
+.MovieDark:hover{
+    cursor: pointer;
+    background-color: #8d8b8b;
+}
+.moviePoster img{
     width: 100%;
 }
-.MovieLight{
+.MovieDark{
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -33,18 +25,18 @@
     width: calc(19% - 4px);
     color: #f1f599;
 }
-.RatingStars{
+.ratingStars{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 66px;
     padding-bottom: 8px;
 }
-.Rating{
+.rating{
     display: flex;
     align-items: center;
 }
-.Legend{
+.legend{
     color: #5f5e5e;
     font-size: 8px;
 }

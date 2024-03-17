@@ -1,60 +1,91 @@
-.MoviesListCard{
+.MoviesListCardLight{
+    background: #aba7c9;
 
 }
-.Movie{
+.MoviesListCardDark{
+    background: #322c6d;
+}
+.movie{
     width: 35vw;
 }
-.Img{
+.img{
     width: 35vw;
     padding: 0 0 40px 200px;
 }
-.Card{
+.card{
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
     margin: 30px 0 0 0;
 }
-.TitleBox{
+.titleBox{
     /*margin: 20px;*/
 }
-.Title{
+.title{
     display: flex;
     align-items: center;
 }
-.TitleField{
+.titleFieldLight{
     margin-right: 10px;
 }
-.TitleOrigValue{
+.titleFieldDark{
+    color: #fef487;
+    margin-right: 10px;
+}
+.titleOrigValue{
     font-size: 43px;
     color: #f50303;
 }
-.TitleValue{
+.titleValue{
     font-size: 26px;
     color: coral;
     margin-bottom: 20px;
 }
-.Overview{
+.overview{
     display: flex;
     flex-direction: column;
 }
-.OverviewField{
+.overviewField{
     color: coral;
     font-size: 26px;
     margin-left: 20px;
 }
-.OverviewValue{
+.overviewValueLight{
     font-size: 23px;
     width: 25vw;
 }
-.Field{
+.overviewValueDark{
+    color: #d2cc7a;
+    font-size: 23px;
+    width: 25vw;
+}
+.fieldLight{
     font-size: 16px;
     margin: 0 0 13px 0px;
 }
-.Value{
+.fieldDark{
+    color: #fef487;
+    font-size: 16px;
+    margin: 0 0 13px 0px;
+}
+.valueLight{
     font-size: 26px;
     color: #1f41a6;
     margin: 0 0 13px 33px;
 }
+.valueDark{
+    font-size: 26px;
+    color: #5b82f5;
+    margin: 0 0 13px 33px;
+}
+.ratingLight{
+
+}
+.ratingDark{
+    color: #fef487;
+}
+
+
 
 

@@ -1,4 +1,9 @@
-.Movies{
+.MoviesLight{
+    background: #aba7c9;
+    display: flex;
+    flex-wrap: wrap;
+}
+.MoviesDark{
     background: #1d1a40;
     display: flex;
     flex-wrap: wrap;
