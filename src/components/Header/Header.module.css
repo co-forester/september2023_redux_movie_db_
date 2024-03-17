@@ -53,4 +53,18 @@
     box-shadow: #7979de 4px 4px 4px;
     background-color: #aaaa82;
 }
+.avatarLight{
+    box-shadow: #353434 4px 4px 4px;
+}
+.avatarDark{
+    box-shadow: #7979de 4px 4px 4px;
+}
+.userAvatar{
+    display: flex;
+    align-items: center;
+}
+.userAvatar p{
+    margin-right: 13px;
+    color: #fb1616;
+}
 

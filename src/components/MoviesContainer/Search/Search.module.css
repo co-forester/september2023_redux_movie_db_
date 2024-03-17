@@ -7,10 +7,10 @@
 .SearchHead{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .SearchMap{
     display: flex;
     align-items: center;
     margin: 8px;
-    padding-right: 300px;
 }

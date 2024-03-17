@@ -25,7 +25,12 @@ const Header = () => {
             <div className={css.buttonBox}>
                 <button className={theme ? css.buttonLight : css.buttonDark} onClick={switchTheme}>{theme ? 'Theme dark' : 'Theme light' }</button>
             </div>
-            <Avatar alt="Remy Sharp" src="./icon8-gjbcr.svg"/>
+            <div className={css.userAvatar}>
+                <p>username</p>
+                <Avatar className={theme ? css.avatarLight : css.avatarDark} alt="Remy Sharp" src="./icon8-gjbcr.svg"
+                        sx={{width: 36, height: 36}}/>
+            </div>
+
         </div>
     );
 };

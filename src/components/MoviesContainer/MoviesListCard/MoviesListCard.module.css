@@ -1,11 +1,11 @@
 .MoviesListCardLight{
     height: 100vh;
-    padding-top: 30px;
+    padding-top: 80px;
     background: #aba7c9;
 }
 .MoviesListCardDark{
     height: 100vh;
-    padding-top: 50px;
+    padding-top: 80px;
     background: #39365c;
 }
 .movie{

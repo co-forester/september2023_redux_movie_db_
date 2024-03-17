@@ -13,7 +13,7 @@ interface IState {
 }
 
 const initialState: IState = {
-    genres: null,
+    genres: [],
     movies: [],
     page: null,
     total_pages: null
