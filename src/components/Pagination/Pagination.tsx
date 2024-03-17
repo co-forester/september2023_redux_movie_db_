@@ -5,6 +5,7 @@ import css from './Pagination.module.css'
 import {useAppSelector} from "../../hooks";
 
 const Pagination = () => {
+    const theme = useAppSelector(state => state.theme.theme);
     const {page, total_pages} = useAppSelector(state => state.movies);
     const [, setQuery] = useSearchParams({page: '1'})
     const prevPage = () => {
@@ -21,11 +22,11 @@ const Pagination = () => {
     }
 
     return (
-        <div className={css.Pagination}>
-            <button className={css.ButPrev} disabled={(page === 1)} onClick={prevPage}>prev</button>
-            <div>current {page}</div>
-            <button className={css.ButNext} disabled={page === total_pages} onClick={nextPage}>next</button>
-            <div>total {total_pages}</div>
+        <div className={theme ? css.PaginationLight : css.PaginationDark}>
+            <button className={theme ? css.butPrevLight : css.butPrevDark} disabled={(page === 1)} onClick={prevPage}>prev</button>
+            <div className={css.currentPage}>current {page}</div>
+            <button className={theme ? css.butNextLight : css.butNextDark} disabled={page === total_pages} onClick={nextPage}>next</button>
+            <div className={css.totalPage}>total {total_pages}</div>
         </div>
     );
 };

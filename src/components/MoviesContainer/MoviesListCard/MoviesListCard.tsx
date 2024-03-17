@@ -7,7 +7,7 @@ import {IMovie} from "../../../interfaces";
 
 const MoviesListCard = () => {
     const theme = useAppSelector(state => state.theme.theme);
-    const {state:{movie, poster}} = useAppLocation<{movie:IMovie, poster: string}>()
+    const {state: {movie, poster}} = useAppLocation<{ movie: IMovie, poster: string }>()
     const {original_title, overview, release_date, title, vote_average, genre_ids} = movie;
     // const genresMovie: string[] = (gen.filter((item: IGenre) => genre_ids.includes(item.id)).map((item: IGenre) => item.name)).join();
     const vote: number = vote_average / 2;

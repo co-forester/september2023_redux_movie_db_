@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #41419b;
+    background: #4d487f;
     height: 50px;
 }
 .HeaderDark a{

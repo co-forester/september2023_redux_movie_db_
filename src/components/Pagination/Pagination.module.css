@@ -1,14 +1,28 @@
-.CurrentPage{
+.currentPage, .totalPage{
     margin: 0 4px 0 4px;
 }
-.ButPrev, .ButNext{
+.butPrevLight, .butNextLight{
     margin: 0 6px 0 6px;
     border-radius: 6px;
     box-shadow: #353434 4px 4px 4px;
     background-color: #f7f7b2;
     padding: 0 13px 0 13px;
 }
-.Pagination {
+.butPrevDark, .butNextDark{
+    margin: 0 6px 0 6px;
+    border-radius: 6px;
+    box-shadow: #7979de 4px 4px 4px;
+    background-color: #aaaa82;
+    padding: 0 13px 0 13px;
+}
+.PaginationLight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  23px 13px 13px 13px;
+}
+.PaginationDark {
+    color:  #f7f7b2;
     display: flex;
     justify-content: center;
     align-items: center;
