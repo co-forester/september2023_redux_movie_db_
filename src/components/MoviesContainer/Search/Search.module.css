@@ -1,3 +1,16 @@
 .Search{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.SearchHead{
+    display: flex;
+    justify-content: center;
+}
+.SearchMap{
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    padding-right: 300px;
 }
