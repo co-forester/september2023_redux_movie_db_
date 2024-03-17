@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 5px;
     font-size: 21px;
-    width: calc(19% - 4px);
+    width: calc(19.44% - 0.4%);
     color: #fb1616;
 }
 .MovieLight:hover{
@@ -22,14 +22,14 @@
     flex-direction: column;
     padding: 5px;
     font-size: 21px;
-    width: calc(19% - 4px);
+    width: calc(19.44% - 0.4%);
     color: #f1f599;
 }
 .ratingStars{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 66px;
+    height: 78px;
     padding-bottom: 8px;
 }
 .rating{
