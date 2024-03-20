@@ -18,7 +18,7 @@ const loadingSlice = createSlice({
                 state.isLoading = false
             })
             .addMatcher(isPending(), state => {
-                state.isLoading = true
+                state.isLoading = true;
             })
             .addMatcher(isRejected(), state => {
                 state.isLoading = false

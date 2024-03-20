@@ -11,13 +11,13 @@
     font-size: 25px;
 }
 .HeaderLight a:hover{
-    text-decoration: underline;
-    color: #f75050;
+    text-decoration: none;
+    color: #8ceff8;
     font-size: 28px;
 }
 .HeaderLight a:active{
     text-decoration: none;
-    color: #8ceff8;
+    color: #f75050;
 }
 .HeaderDark{
     display: flex;
@@ -43,28 +43,58 @@
 .buttonBox{
     padding-left: 300px;
 }
-.buttonLight{
-    border-radius: 10px;
-    box-shadow: #353434 4px 4px 4px;
-    background-color: #f7f7b2;
-}
 .buttonDark{
-    border-radius: 10px;
-    box-shadow: #7979de 4px 4px 4px;
-    background-color: #aaaa82;
+    display: flex;
+    color: #f1f599;
+    background: #585575;
+    box-shadow: #6969c2 5px 5px 5px ;
+    margin: 3px;
+    padding: 4px 7px 4px 7px;
+    border-radius: 6px;
+}
+.buttonLight{
+    display: flex;
+    background: #908bbb;
+    box-shadow: #41419b 3px 3px 3px ;
+    margin: 3px;
+    padding: 4px 7px 4px 7px;
+    border-radius: 6px;
+}
+.buttonLight:hover{
+    cursor: pointer;
+    background-color: #a6a5a5;
+}
+.buttonDark:hover{
+    cursor: pointer;
+    background-color: #a6a5a5;
+}
+.buttonDark[class='active']{
+    cursor: pointer;
+    background-color: #6f6f6f;
+}
+.buttonLight[class='active']{
+
+    background-color: #665478;
+}
+.buttonDark:active{
+    background-color: #9c9b9b;
 }
 .avatarLight{
     box-shadow: #353434 4px 4px 4px;
+    margin-left: 13px;
 }
 .avatarDark{
     box-shadow: #7979de 4px 4px 4px;
+    margin-left: 13px;
 }
-.userAvatar{
+.userAvatarLight{
     display: flex;
     align-items: center;
 }
-.userAvatar p{
-    margin-right: 13px;
-    color: #fb1616;
+.userAvatarDark{
+    display: flex;
+    align-items: center;
+    color: #fbb40e;
 }
+
 

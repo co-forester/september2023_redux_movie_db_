@@ -15,8 +15,8 @@ interface IState {
 const initialState: IState = {
     genres: [],
     movies: [],
-    page: null,
-    total_pages: null
+    page: 1 || null,
+    total_pages: 500 || null
 }
 
 const getAll = createAsyncThunk<IMovies, { page: number }>(

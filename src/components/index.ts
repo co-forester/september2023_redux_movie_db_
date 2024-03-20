@@ -1,3 +1,3 @@
 export * from './Header';
-export * from './Pagination';
+export * from './PaginationBlock';
 export * from './MoviesContainer'

@@ -9,12 +9,12 @@
     background: #39365c;
 }
 .movie{
-    width: 35vw;
+    width: 50vw;
 }
-.img{
-    width: 35vw;
-    padding: 10px 0 40px 200px;
-}
+/*.img{*/
+/*    width: 35vw;*/
+/*    padding: 10px 0 40px 200px;*/
+/*}*/
 .card{
     display: flex;
     justify-content: center;
@@ -29,17 +29,26 @@
     align-items: center;
 }
 .titleFieldLight{
+    display: flex;
+    align-items: center;
     margin-right: 10px;
 }
 .titleFieldDark{
+    display: flex;
+    align-items: end;
     color: #fef487;
     margin-right: 10px;
 }
 .titleOrigValue{
+    display: flex;
+    align-items: end;
     font-size: 43px;
     color: #f50303;
+
 }
 .titleValue{
+    display: flex;
+    align-items: end;
     font-size: 26px;
     color: coral;
     margin-bottom: 20px;

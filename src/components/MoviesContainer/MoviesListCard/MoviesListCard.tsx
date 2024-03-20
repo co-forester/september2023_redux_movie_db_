@@ -1,17 +1,28 @@
 import React from 'react';
-import {Badge, Rating, Typography} from "@mui/material";
+import {Badge, Container, Rating, Typography} from "@mui/material";
 
 import css from "./MoviesListCard.module.css";
-import {useAppLocation, useAppSelector} from "../../../hooks";
-import {IGenre, IMovie} from "../../../interfaces";
+import { useAppLocation, useAppSelector } from "../../../hooks";
+import { IGenre, IMovie } from "../../../interfaces";
 
 const MoviesListCard = () => {
     const theme = useAppSelector(state => state.theme.theme);
-    const genres = useAppSelector(state => state.movies.genres)
-    const {state: {movie, poster}} = useAppLocation<{ movie: IMovie, poster: string }>()
-    const {original_title, overview, release_date, title, vote_average, genre_ids} = movie;
+    const genres = useAppSelector(state => state.movies.genres);
+    const { state: { movie, poster } } = useAppLocation<{ movie: IMovie, poster: string }>();
+    const { original_title, overview, release_date, title, vote_average, genre_ids } = movie;
 
-    const genresMovie: string = (genres.filter((item: IGenre) => genre_ids.includes(item.id)).map((item: IGenre) => item.name)).join(' . ');
+    const badgeStyle = {
+        fontSize: '16px',
+        // height: '20px',
+        backgroundColor: theme ? '#a4de8e' : '#f29d0a',
+        // color: theme ? '#000000' : '#ffffff'
+    };
+
+    const genresBadges = genres
+        .filter((item: IGenre) => genre_ids.includes(item.id))
+        .map((item: IGenre, index: number) => (
+            <Badge key={index} badgeContent={item.name} color="primary" style={{...badgeStyle, position: 'absolute', top: `${10 + (index * 25)}px`, right: '10px'}}/>
+        ));
 
     const vote: number = vote_average / 2;
 
@@ -19,9 +30,10 @@ const MoviesListCard = () => {
         <div className={theme ? css.MoviesListCardLight : css.MoviesListCardDark}>
             <div className={css.card}>
                 <div className={css.img}>
-                    <Badge className={css.Badge} badgeContent={genresMovie} color="primary">
-                    <img src={poster} alt={original_title}/>
-                    </Badge>
+                        <Container style={{ position: 'relative' }}>
+                            <img src={poster} alt={original_title} />
+                            {genresBadges}
+                        </Container>
                 </div>
                 <div className={css.movie}>
                     <div className={css.titleBox}>
@@ -39,8 +51,7 @@ const MoviesListCard = () => {
                     </div>
                     <div className={theme ? css.ratingLight : css.ratingDark}>
                         <Typography className={css.legend} component="legend">Rating</Typography>
-                        <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} value={vote} readOnly
-                                size='large'/>
+                        <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} value={vote} readOnly size='large' />
                     </div>
                     <div className={css.overview}>
                         <div className={css.overviewField}>Overview:</div>
@@ -48,9 +59,8 @@ const MoviesListCard = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
 
-export {MoviesListCard};
+export { MoviesListCard };

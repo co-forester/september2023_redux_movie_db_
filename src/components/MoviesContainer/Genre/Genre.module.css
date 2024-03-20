@@ -4,7 +4,7 @@
     background: #585575;
     box-shadow: #6969c2 5px 5px 5px ;
     margin: 3px;
-    padding: 3px 6px 3px 6px;
+    padding: 4px 7px 4px 7px;
     border-radius: 6px;
 }
 .butGenreLight{
@@ -12,7 +12,7 @@
     background: #908bbb;
     box-shadow: #41419b 3px 3px 3px ;
     margin: 3px;
-    padding: 3px 6px 3px 6px;
+    padding: 4px 7px 4px 7px;
     border-radius: 6px;
 }
 .butGenreLight:hover{
