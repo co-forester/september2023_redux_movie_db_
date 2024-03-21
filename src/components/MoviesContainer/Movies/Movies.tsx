@@ -6,7 +6,7 @@ import {IMovie} from "../../../interfaces";
 import {useAppSelector} from "../../../hooks";
 import {PaginationBlock} from "../../PaginationBlock";
 
-interface IPops extends PropsWithChildren{
+interface IPops extends PropsWithChildren {
     movies: IMovie[]
 }
 

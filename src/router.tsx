@@ -2,9 +2,9 @@ import React from "react";
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import {GenresList, MoviesListCard, Search} from "./components";
+import {GenresList, MoviesList, MoviesListCard, Search} from "./components";
 import {MoviesPage} from "./pages";
-import {MoviesList} from "./components/MoviesContainer/MoviesList";
+
 
 const router = createBrowserRouter([
     {

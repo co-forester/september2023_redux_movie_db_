@@ -43,7 +43,6 @@ const Search = () => {
 
     return (
         <div className={css.Search}>
-                <div>
                     <ThemeProvider theme={customTheme}>
                         <Container sx={{marginTop: 1}}>
                             <TextField
@@ -54,7 +53,6 @@ const Search = () => {
                         </Container>
                     </ThemeProvider>
                     <Movies movies={movies}/>
-                </div>
         </div>
     );
 };

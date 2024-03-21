@@ -14,8 +14,9 @@ const Header = () => {
         navigate(-1)
     }
     const switchTheme = () => {
-        dispatch(themeActions.themeChange())
+        dispatch(themeActions.themeChange());
     }
+
     return (
         <div className={theme ? css.HeaderLight : css.HeaderDark}>
             <button className={theme ? css.buttonLight : css.buttonDark} onClick={back}>back</button>

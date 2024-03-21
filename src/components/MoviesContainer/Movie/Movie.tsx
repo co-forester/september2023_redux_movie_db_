@@ -7,11 +7,11 @@ import {posterURL} from "../../../constants";
 import {useNavigate} from "react-router-dom";
 import {useAppSelector} from "../../../hooks";
 
-interface IProps extends PropsWithChildren{
+interface IProps extends PropsWithChildren {
     movie: IMovie
 }
 
-export const Movie: FC<IProps>= ({movie}) => {
+export const Movie: FC<IProps> = ({movie}) => {
     const theme = useAppSelector(state => state.theme.theme);
     const {poster_path, title, original_title, vote_average} = movie;
     const navigate = useNavigate();

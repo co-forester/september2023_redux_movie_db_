@@ -12,16 +12,14 @@ const MoviesListCard = () => {
     const { original_title, overview, release_date, title, vote_average, genre_ids } = movie;
 
     const badgeStyle = {
-        fontSize: '16px',
-        // height: '20px',
+        fontSize: '17px',
         backgroundColor: theme ? '#a4de8e' : '#f29d0a',
-        // color: theme ? '#000000' : '#ffffff'
     };
 
     const genresBadges = genres
         .filter((item: IGenre) => genre_ids.includes(item.id))
         .map((item: IGenre, index: number) => (
-            <Badge key={index} badgeContent={item.name} color="primary" style={{...badgeStyle, position: 'absolute', top: `${10 + (index * 25)}px`, right: '10px'}}/>
+            <Badge key={index} badgeContent={item.name}  color="primary" style={{...badgeStyle, width:'35px', position: 'absolute', top: `${10 + (index * 25)}px`, right: '10px'}}/>
         ));
 
     const vote: number = vote_average / 2;

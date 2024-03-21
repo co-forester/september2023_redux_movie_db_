@@ -9,12 +9,12 @@
     background: #39365c;
 }
 .movie{
-    width: 50vw;
+
+    width: 30vw;
 }
-/*.img{*/
-/*    width: 35vw;*/
-/*    padding: 10px 0 40px 200px;*/
-/*}*/
+.img {
+    margin: 0 20px 0 20px;
+}
 .card{
     display: flex;
     justify-content: center;
