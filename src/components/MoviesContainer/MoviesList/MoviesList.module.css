@@ -2,3 +2,9 @@
     display: flex;
     justify-content: center;
 }
+.sort{
+    width: 10vw;
+}
+.movies{
+    width: 90vw;
+}

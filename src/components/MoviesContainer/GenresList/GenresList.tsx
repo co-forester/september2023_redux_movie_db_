@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSearchParams} from "react-router-dom";
-import {CircularProgress} from "@mui/material";
+import {Backdrop, CircularProgress} from "@mui/material";
 
 import css from './GenresList.module.css'
 import {Movies} from "../Movies";
@@ -33,7 +33,8 @@ const GenresList = () => {
             <div className={css.GenresMap}>
                 {genres.map(genre => <Genre key={genre.id} genre={genre}/>)}
             </div>
-            {isLoading ? (<CircularProgress color="primary"/>) : (<Movies movies={movies}/>)}
+            {isLoading ? (<Backdrop open={true} sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }} >
+                <CircularProgress color="primary"/></Backdrop>):(<Movies movies={movies}/>)}
         </div>
     );
 };

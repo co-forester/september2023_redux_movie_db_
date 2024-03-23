@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, createTheme, ThemeProvider, Typography} from "@mui/material";
 import {useSearchParams} from "react-router-dom";
 
@@ -8,6 +8,7 @@ import {movieActions} from "../../../Redux";
 
 const Sort = () => {
     const theme = useAppSelector(state => state.theme.theme);
+    const [activeButton, setActiveButton] = useState('');
     const [query, setQuery] = useSearchParams({query: '', page: '1'});
     const dispatch = useAppDispatch();
     const page = +query.get('page');
@@ -17,69 +18,14 @@ const Sort = () => {
         dispatch(movieActions.getBySort({bySort, page}));
     }, [bySort, page, dispatch]);
 
-    const sortByPopPlus = (): void => {
-        const query = 'popularity.asc';
-        setQuery({query, page: '1'});
-    };
-    const sortByPop = (): void => {
-        const query = 'popularity.desc';
-        setQuery({query, page: '1'});
-    };
-
-    const sortByAveragePlus = (): void => {
-        const query = 'vote_average.asc';
-        setQuery({query, page: '1'});
-    };
-    const sortByAverage = (): void => {
-        const query = 'vote_average.desc';
-        setQuery({query, page: '1'});
-    };
-
-    const sortByReleasePlus = (): void => {
-        const query = 'primary_release_date.asc';
-        setQuery({query, page: '1'});
-    };
-    const sortByRelease = (): void => {
-        const query = 'primary_release_date.desc';
-        setQuery({query, page: '1'});
-    };
-
-    const sortByCountPlus = (): void => {
-        const query = 'vote_count.asc';
-        setQuery({query, page: '1'});
-    };
-    const sortByCount = (): void => {
-        const query = 'vote_count.desc';
-        setQuery({query, page: '1'});
-    };
-
-    const sortByRevenuePlus = (): void => {
-        const query = 'revenue.asc';
-        setQuery({query, page: '1'});
-    };
-    const sortByRevenue = (): void => {
-        const query = 'revenue.desc';
-        setQuery({query, page: '1'});
-    };
-    const sortByOrigTitlePlus = (): void => {
-        const query = 'original_title.asc';
-        setQuery({query, page: '1'});
-    };
-    const sortByOrigTitle = (): void => {
-        const query = 'original_title.desc';
-        setQuery({query, page: '1'});
-    };
-    const sortByTitlePlus = (): void => {
-        const query = 'title.asc';
-        setQuery({query, page: '1'});
-    };
-    const sortByTitle = (): void => {
-        const query = 'title.desc';
-        setQuery({query, page: '1'});
+    const handleButtonClick = ({queryValue}: { queryValue: string }):void => {
+        setQuery({ query: queryValue, page: '1' });
+        setActiveButton(queryValue);
     };
 
     const fontColor = theme ? '#000' : '#f1f599';
     const buttonBackgroundColor = theme ? '#000' : '#f1f599';
+    const buttonActivity = theme ? '#7f7fa8' : '#4c4c9c';
 
     const customTheme = createTheme({
         palette: {
@@ -96,20 +42,20 @@ const Sort = () => {
             <div className={css.searchBox}>
                 <ThemeProvider theme={customTheme}>
                     <Typography sx={{margin: '10px', color: '#f1f599'}}>sort by</Typography>
-                    <Button  onClick={sortByPopPlus} variant={'outlined'} color={'primary'}>popularity  +</Button>
-                    <Button  onClick={sortByPop} variant={'outlined'} color={'primary'}>popularity  -</Button>
-                    <Button onClick={sortByAveragePlus} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>vote average  +</Button>
-                    <Button onClick={sortByAverage} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>vote average  -</Button>
-                    <Button onClick={sortByReleasePlus} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>release date  +</Button>
-                    <Button onClick={sortByRelease} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>release date  -</Button>
-                    <Button onClick={sortByCountPlus} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>vote count  +</Button>
-                    <Button onClick={sortByCount} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>vote count  -</Button>
-                    <Button onClick={sortByRevenuePlus} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>revenue  +</Button>
-                    <Button onClick={sortByRevenue} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>revenue  -</Button>
-                    <Button onClick={sortByOrigTitlePlus} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>original title  +</Button>
-                    <Button onClick={sortByOrigTitle} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>original title  -</Button>
-                    <Button onClick={sortByTitlePlus} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>title  +</Button>
-                    <Button onClick={sortByTitle} variant={'outlined'} color={'primary'} sx={{marginTop: 1}}>title  -</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'popularity.asc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'popularity.asc' && { backgroundColor: buttonActivity }) }}>popularity  +</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'popularity.desc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'popularity.desc' && { backgroundColor: buttonActivity }) }}>popularity  -</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'vote_average.asc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'vote_average.asc' && { backgroundColor: buttonActivity }) }}>vote average  +</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'vote_average.desc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'vote_average.desc' && { backgroundColor: buttonActivity }) }}>vote average  -</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'primary_release_date.asc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'primary_release_date.asc' && { backgroundColor: buttonActivity }) }}>release date  +</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'primary_release_date.desc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'primary_release_date.desc' && { backgroundColor: buttonActivity }) }}>release date  -</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'vote_count.asc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'vote_count.asc' && { backgroundColor: buttonActivity }) }}>vote count +</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'vote_count.desc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'vote_count.desc' && { backgroundColor: buttonActivity }) }}>vote count -</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'revenue.asc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'revenue.asc' && { backgroundColor: buttonActivity }) }}>revenue +</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'revenue.desc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'revenue.desc' && { backgroundColor: buttonActivity }) }}>revenue -</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'original_title.asc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'original_title.asc' && { backgroundColor: buttonActivity }) }}>original title  +</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'original_title.desc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'original_title.desc' && { backgroundColor: buttonActivity }) }}>original title  -</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'title.asc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'title.asc' && { backgroundColor: buttonActivity }) }}>title  +</Button>
+                    <Button onClick={() => handleButtonClick({queryValue: 'title.desc'})} variant={'outlined'} color={'primary'} sx={{ ...(activeButton === 'title.desc' && { backgroundColor: buttonActivity }) }}>title  -</Button>
                 </ThemeProvider>
 
             </div>
