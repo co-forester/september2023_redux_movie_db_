@@ -14,10 +14,12 @@ const Movies: FC<IPops> = ({movies}) => {
     const theme = useAppSelector(state => state.theme.theme);
 
     return (
-        <div className={css.MoviesListBox}>
-            <PaginationBlock/>
-            <div className={theme ? css.MoviesLight : css.MoviesDark}>
-                {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
+        <div className={css.windowBox}>
+            <div className={css.MoviesListBox}>
+                <PaginationBlock/>
+                <div className={theme ? css.MoviesLight : css.MoviesDark}>
+                    {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
+                </div>
             </div>
         </div>
     );

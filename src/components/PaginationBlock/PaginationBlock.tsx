@@ -15,6 +15,7 @@ const PaginationBlock = () => {
             return query;
         });
     };
+    const count = total_pages >= 500 ? 500 : total_pages;
 
     const fontColor = theme  ? '#000' : '#f1f599';
     const backgroundColor = theme  ? '' : '#3c3c76';
@@ -34,7 +35,7 @@ const PaginationBlock = () => {
         <div>
             <ThemeProvider theme={customTheme}>
                 <Pagination
-                    count={total_pages}
+                    count={count}
                     page={page}
                     onChange={handleChangePage}
                     siblingCount={10}

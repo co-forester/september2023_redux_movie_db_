@@ -71,7 +71,18 @@ const getKeyWord = createAsyncThunk<IMovies, {keyWord: string, page: number}>(
     }
 )
 
-
+const getBySort = createAsyncThunk<IMovies, {bySort: string, page: number}>(
+    '/movieSlice/getBySort',
+    async ({bySort, page}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getBySort(bySort, page);
+            return data
+        }catch (e) {
+            const err = e as AxiosError;
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
 
 const movieSlice = createSlice({
     name: 'movieSlice',
@@ -97,6 +108,11 @@ const movieSlice = createSlice({
                 state.page = action.payload.page;
                 state.total_pages = action.payload.total_pages
             })
+            .addCase(getBySort.fulfilled, (state, action) => {
+                state.movies = action.payload.results;
+                state.page = action.payload.page;
+                state.total_pages = action.payload.total_pages
+            })
 })
 
 const {reducer: movieReducer, actions} = movieSlice;
@@ -106,7 +122,8 @@ const movieActions = {
     getAll,
     getAllByGenre,
     getAllGenres,
-    getKeyWord
+    getKeyWord,
+    getBySort
 }
 
 export {movieReducer, movieActions}

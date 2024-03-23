@@ -1,15 +1,17 @@
 import React, {ChangeEvent, useEffect} from 'react';
 import {useSearchParams} from "react-router-dom";
-import {Container, createTheme, TextField, ThemeProvider} from '@mui/material'
+import {CircularProgress, Container, createTheme, TextField, ThemeProvider} from '@mui/material'
 
 import css from './Search.module.css'
 import {useAppDispatch, useAppSelector} from "../../../hooks";
 import {movieActions} from "../../../Redux";
 import {Movies} from "../Movies";
+import {Sort} from "../Sort";
 
 const Search = () => {
     const theme = useAppSelector(state => state.theme.theme);
     const {movies} = useAppSelector(state => state.movies);
+    const {isLoading} = useAppSelector(state => state.loadingReducer);
     const [query, setQuery] = useSearchParams({query: '', page: '1'});
     const dispatch = useAppDispatch();
     const page = +query.get('page');
@@ -52,7 +54,7 @@ const Search = () => {
                             />
                         </Container>
                     </ThemeProvider>
-                    <Movies movies={movies}/>
+            {isLoading ? (<CircularProgress color="primary" />):(<Movies movies={movies}/>)}
         </div>
     );
 };

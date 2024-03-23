@@ -14,3 +14,6 @@
     margin: 0 12vw 0 12vw;
     width: 66vw;
 }
+.windowBox{
+    display: flex;
+}

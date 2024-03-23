@@ -5,7 +5,7 @@ import css from './Genre.module.css';
 import {IGenre} from "../../../interfaces";
 import {useAppSelector} from "../../../hooks";
 
-interface IProps extends PropsWithChildren{
+interface IProps extends PropsWithChildren {
     genre: IGenre
 }
 
@@ -15,7 +15,7 @@ const Genre: FC<IProps> = ({genre}) => {
     const {id, name} = genre;
 
     const byGenre = () => {
-         setQuery({genres: id.toString()})
+        setQuery({genres: id.toString()})
     };
 
     return (
@@ -24,6 +24,5 @@ const Genre: FC<IProps> = ({genre}) => {
         </div>
     );
 };
-
 
 export {Genre};

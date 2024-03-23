@@ -1,10 +1,11 @@
 import React from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
-import {Avatar} from "@mui/material";
+import {Avatar, createTheme, Typography} from "@mui/material";
 
 import css from './Header.module.css'
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {themeActions} from "../../Redux";
+import {fontGrid} from "@mui/material/styles/cssUtils";
 
 const Header = () => {
     const theme = useAppSelector(state => state.theme.theme);
@@ -19,6 +20,7 @@ const Header = () => {
 
     return (
         <div className={theme ? css.HeaderLight : css.HeaderDark}>
+            <Typography color={'#f89f04'} style={{ fontSize: '24px' }}>MDB</Typography>
             <button className={theme ? css.buttonLight : css.buttonDark} onClick={back}>back</button>
             <NavLink to={'moviesPage/search'}>Search</NavLink>
             <NavLink to={'moviesPage/moviesList'}>Movies</NavLink>

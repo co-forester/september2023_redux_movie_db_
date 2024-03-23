@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge, Container, Rating, Typography} from "@mui/material";
+import {Badge, Container, createTheme, Rating, ThemeProvider, Typography} from "@mui/material";
 
 import css from "./MoviesListCard.module.css";
 import { useAppLocation, useAppSelector } from "../../../hooks";
@@ -9,29 +9,38 @@ const MoviesListCard = () => {
     const theme = useAppSelector(state => state.theme.theme);
     const genres = useAppSelector(state => state.movies.genres);
     const { state: { movie, poster } } = useAppLocation<{ movie: IMovie, poster: string }>();
-    const { original_title, overview, release_date, title, vote_average, genre_ids } = movie;
+    const { original_title, overview, release_date, title, vote_average, genre_ids, poster_path} = movie;
 
-    const badgeStyle = {
-        fontSize: '17px',
-        backgroundColor: theme ? '#a4de8e' : '#f29d0a',
-    };
+    const customTheme = createTheme({
+        palette: {
+            primary: {
+                main: '#f29d0a',
+            },
+            secondary: {
+                main: '#a4de8e'
+            }
+        },
+    });
 
     const genresBadges = genres
         .filter((item: IGenre) => genre_ids.includes(item.id))
         .map((item: IGenre, index: number) => (
-            <Badge key={index} badgeContent={item.name}  color="primary" style={{...badgeStyle, width:'35px', position: 'absolute', top: `${10 + (index * 25)}px`, right: '10px'}}/>
+            <Badge key={index} badgeContent={item.name} color="primary" sx={{position: 'absolute', top: `${10 + (index * 25)}px`, right: '10px'}}/>
         ));
 
     const vote: number = vote_average / 2;
+    const defaultPosterURL = '';
 
     return (
         <div className={theme ? css.MoviesListCardLight : css.MoviesListCardDark}>
             <div className={css.card}>
                 <div className={css.img}>
+                    <ThemeProvider theme={customTheme}>
                         <Container style={{ position: 'relative' }}>
-                            <img src={poster} alt={original_title} />
+                            <img src={poster_path ? poster : defaultPosterURL} alt={original_title} />
                             {genresBadges}
                         </Container>
+                    </ThemeProvider>
                 </div>
                 <div className={css.movie}>
                     <div className={css.titleBox}>

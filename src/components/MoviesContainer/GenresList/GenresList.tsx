@@ -6,9 +6,11 @@ import {Movies} from "../Movies";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
 import {movieActions} from "../../../Redux";
 import {Genre} from "../Genre";
+import {CircularProgress} from "@mui/material";
 
 const GenresList = () => {
     const {movies, genres} = useAppSelector(state => state.movies);
+    const {isLoading} = useAppSelector(state => state.loadingReducer);
     const [query] = useSearchParams({page:'1', genres: '1'});
     const dispatch = useAppDispatch();
     const page = + query.get('page');
@@ -31,7 +33,7 @@ const GenresList = () => {
             <div className={css.GenresMap}>
                 {genres.map(genre => <Genre key={genre.id} genre={genre}/>)}
             </div>
-            <Movies movies={movies}/>
+            {isLoading ? (<CircularProgress color="primary" />):(<Movies movies={movies}/>)}
         </div>
     );
 };

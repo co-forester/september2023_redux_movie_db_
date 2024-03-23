@@ -1,10 +1,10 @@
 import React, {FC, PropsWithChildren} from 'react';
 import {Rating, Typography} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 import css from './Movie.module.css'
 import {IMovie} from "../../../interfaces";
 import {posterURL} from "../../../constants";
-import {useNavigate} from "react-router-dom";
 import {useAppSelector} from "../../../hooks";
 
 interface IProps extends PropsWithChildren {
@@ -19,12 +19,13 @@ export const Movie: FC<IProps> = ({movie}) => {
     const toMoviesListCard = () => {
         navigate('/card', {state: {movie, poster}})
     }
+    const defaultPosterURL = 'https://abrakadabra.fun/uploads/posts/2022-04/1648834390_2-abrakadabra-fun-p-otkritki-s-georginami-2.jpg';
     const poster: string = `${posterURL}/${poster_path}/&api_key=d031e7f38834f2d640ae4a98140c550f`;
     const vote: number = vote_average / 2;
     return (
         <div className={theme ? css.MovieLight : css.MovieDark} onClick={toMoviesListCard}>
             <div className={css.moviePoster}>
-                <img src={poster} alt={original_title}/>
+                <img src={poster_path ? poster : defaultPosterURL} alt={original_title}/>
             </div>
             <div className={css.ratingStars}>
                 <div>{title}</div>

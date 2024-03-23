@@ -8,7 +8,8 @@ const posterURL = 'https://image.tmdb.org/t/p/w500'
 const urls = {
     movies: {
         baseByPage: (page: number) => `${movies}?page=${page}`,
-        byGenreId: (genreId: number, page: number): string => `${movies}?api_key=d031e7f38834f2d640ae4a98140c550f&with_genres=${genreId}&page=${page}`
+        byGenreId: (genreId: number, page: number): string => `${movies}?api_key=d031e7f38834f2d640ae4a98140c550f&with_genres=${genreId}&page=${page}`,
+        bySort: (bySort: string, page: number): string => `${movies}?sort_by=${bySort}&page=${page}`
     },
     genres: {
         base: genres,
