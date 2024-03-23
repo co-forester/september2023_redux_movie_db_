@@ -11,7 +11,7 @@ import {Genre} from "../Genre";
 const GenresList = () => {
     const {movies, genres} = useAppSelector(state => state.movies);
     const {isLoading} = useAppSelector(state => state.loadingReducer);
-    const [query] = useSearchParams({page: '1', genres: '1'});
+    const [query] = useSearchParams({page: '1', genres: '35'});
     const dispatch = useAppDispatch();
     const page = +query.get('page');
     const genreId = +query.get('genres')

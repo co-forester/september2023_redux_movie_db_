@@ -90,6 +90,7 @@
 .userAvatarLight{
     display: flex;
     align-items: center;
+    color: #8ceff8;
 }
 .userAvatarDark{
     display: flex;

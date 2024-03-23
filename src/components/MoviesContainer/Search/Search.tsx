@@ -11,7 +11,7 @@ const Search = () => {
     const theme = useAppSelector(state => state.theme.theme);
     const {movies} = useAppSelector(state => state.movies);
     const {isLoading} = useAppSelector(state => state.loadingReducer);
-    const [query, setQuery] = useSearchParams({query: '', page: '1'});
+    const [query, setQuery] = useSearchParams({query: 'monsters', page: '1'});
     const dispatch = useAppDispatch();
     const page = +query.get('page');
     const keyWord = query.get('query');

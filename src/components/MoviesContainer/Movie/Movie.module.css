@@ -4,7 +4,7 @@
     padding: 5px;
     font-size: 21px;
     width: calc(19.44% - 0.4%);
-    color: #fb1616;
+    color: #8ceff8;
 }
 .MovieLight:hover{
     cursor: pointer;
@@ -39,4 +39,18 @@
 .legend{
     color: #5f5e5e;
     font-size: 8px;
+}
+.titleRelease{
+    display: flex;
+    flex-direction: column;
+}
+.valueLight{
+    font-size: 13px;
+    color: #fb1616;
+    margin: 4px 0 4px 33px;
+}
+.valueDark{
+    font-size: 13px;
+    color: #8ceff8;
+    margin: 4px 0 4px 33px;
 }
