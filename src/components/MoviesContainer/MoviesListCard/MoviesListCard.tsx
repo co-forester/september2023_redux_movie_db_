@@ -29,7 +29,7 @@ const MoviesListCard = () => {
         ));
 
     const vote: number = vote_average / 2;
-    const defaultPosterURL = '';
+    const defaultPosterURL = 'https://st5.depositphotos.com/17620692/70777/v/600/depositphotos_707771044-stock-illustration-minimal-covers-design-colorful-halftone.jpg';
 
     return (
         <div className={theme ? css.MoviesListCardLight : css.MoviesListCardDark}>

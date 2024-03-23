@@ -19,7 +19,7 @@ export const Movie: FC<IProps> = ({movie}) => {
     const toMoviesListCard = () => {
         navigate('/card', {state: {movie, poster}})
     }
-    const defaultPosterURL = 'https://abrakadabra.fun/uploads/posts/2022-04/1648834390_2-abrakadabra-fun-p-otkritki-s-georginami-2.jpg';
+    const defaultPosterURL = 'https://st5.depositphotos.com/17620692/70777/v/600/depositphotos_707771044-stock-illustration-minimal-covers-design-colorful-halftone.jpg';
     const poster: string = `${posterURL}/${poster_path}/&api_key=d031e7f38834f2d640ae4a98140c550f`;
     const vote: number = vote_average / 2;
 

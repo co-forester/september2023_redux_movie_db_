@@ -27,7 +27,7 @@ const Sort = () => {
     const fontColor = theme ? '#000' : '#f1f599';
     const buttonBackgroundColor = theme ? '#000' : '#f1f599';
     const buttonActivity = theme ? '#7f7fa8' : '#4c4c9c';
-    const typographyColor = theme ? '#fb1616' : '#fb5f26';
+    const typographyColor = theme ? '#8ceff8' : '#f56b38';
     const activeButtonTextColor = theme ? '#f1f599' : '#8ceff8';
 
     const customTheme = createTheme({
