@@ -6,7 +6,6 @@ import css from './Search.module.css'
 import {useAppDispatch, useAppSelector} from "../../../hooks";
 import {movieActions} from "../../../Redux";
 import {Movies} from "../Movies";
-import {Sort} from "../Sort";
 
 const Search = () => {
     const theme = useAppSelector(state => state.theme.theme);

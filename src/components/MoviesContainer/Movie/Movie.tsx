@@ -22,6 +22,7 @@ export const Movie: FC<IProps> = ({movie}) => {
     const defaultPosterURL = 'https://abrakadabra.fun/uploads/posts/2022-04/1648834390_2-abrakadabra-fun-p-otkritki-s-georginami-2.jpg';
     const poster: string = `${posterURL}/${poster_path}/&api_key=d031e7f38834f2d640ae4a98140c550f`;
     const vote: number = vote_average / 2;
+
     return (
         <div className={theme ? css.MovieLight : css.MovieDark} onClick={toMoviesListCard}>
             <div className={css.moviePoster}>

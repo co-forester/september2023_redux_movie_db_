@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {useSearchParams} from "react-router-dom";
+import {CircularProgress} from "@mui/material";
 
 import {Movies} from "../Movies";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
 import {movieActions} from "../../../Redux";
 import css from './MoviesList.module.css'
 import {Sort} from "../Sort";
-import {CircularProgress} from "@mui/material";
 
 const MoviesList = () => {
     const {movies} = useAppSelector(state => state.movies);
