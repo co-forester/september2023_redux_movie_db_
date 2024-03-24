@@ -25,10 +25,10 @@ const Search = () => {
         setQuery({query, page: '1'});
     };
 
-    const backgroundColor = theme ? '#a7a7d7' : '#47477b'; // Фон неактивного TextField
-    const activeBackgroundColor = theme ? '#9a9acb' : '#37375f'; // Фон активного TextField
-    const borderColor = theme ? '#000' : '#f1f599'; // Цвет границы TextField при неактивном состоянии
-    const activeBorderColor = theme ? '#000' : '#fb1616'; // Цвет границы TextField при активном состоянии
+    const backgroundColor = theme ? '#a7a7d7' : '#47477b';
+    const activeBackgroundColor = theme ? '#9a9acb' : '#37375f';
+    const borderColor = theme ? '#000' : '#f1f599';
+    const activeBorderColor = theme ? '#000' : '#fb1616';
     const fontColor1 = theme ? '#000' : '#f1f599';
     const fontColor2 = theme ? '#000' : '#f1f599';
 
@@ -38,9 +38,6 @@ const Search = () => {
                 primary: fontColor1,
                 secondary: fontColor2
             },
-            // background: {
-            //     paper: backgroundColor
-            // },
         },
     });
 

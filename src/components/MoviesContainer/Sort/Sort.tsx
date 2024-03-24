@@ -19,8 +19,8 @@ const Sort = () => {
         dispatch(movieActions.getBySort({bySort, page}));
     }, [bySort, page, dispatch]);
 
-    const handleButtonClick = ({queryValue}: { queryValue: string }):void => {
-        setQuery({ query: queryValue, page: '1' });
+    const handleButtonClick = ({queryValue}: { queryValue: string }): void => {
+        setQuery({query: queryValue, page: '1'});
         setActiveButton(queryValue);
     };
 
@@ -42,26 +42,109 @@ const Sort = () => {
     });
 
     return (
-            <div className={css.searchBox}>
-                <ThemeProvider theme={customTheme}>
-                    <Typography sx={{margin: '10px', color: typographyColor}}>sort by</Typography>
-                    <Button onClick={() => handleButtonClick({queryValue: 'popularity.asc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'popularity.asc' && { backgroundColor: buttonActivity, color: activeButtonTextColor}), marginTop: '6px'}}>popularity  +</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'popularity.desc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'popularity.desc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>popularity  -</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'vote_average.asc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'vote_average.asc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>vote average  +</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'vote_average.desc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'vote_average.desc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>vote average  -</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'primary_release_date.asc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'primary_release_date.asc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>release date  +</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'primary_release_date.desc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'primary_release_date.desc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>release date  -</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'vote_count.asc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'vote_count.asc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>vote count +</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'vote_count.desc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'vote_count.desc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>vote count -</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'revenue.asc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'revenue.asc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>revenue +</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'revenue.desc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'revenue.desc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>revenue -</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'original_title.asc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'original_title.asc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>original title  +</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'original_title.desc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'original_title.desc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>original title  -</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'title.asc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'title.asc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>title  +</Button>
-                    <Button onClick={() => handleButtonClick({queryValue: 'title.desc'})} variant={'outlined'} color={'primary'}  sx={{ ...(activeButton === 'title.desc' && { backgroundColor: buttonActivity, color: activeButtonTextColor  }), marginTop: '6px'}}>title  -</Button>
-                </ThemeProvider>
-
-            </div>
+        <div className={css.searchBox}>
+            <ThemeProvider theme={customTheme}>
+                <Typography sx={{margin: '10px', color: typographyColor}}>sort by</Typography>
+                <Button onClick={() => handleButtonClick({queryValue: 'popularity.asc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'popularity.asc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>popularity +</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'popularity.desc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'popularity.desc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>popularity -</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'vote_average.asc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'vote_average.asc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>vote average +</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'vote_average.desc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'vote_average.desc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>vote average -</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'primary_release_date.asc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'primary_release_date.asc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>release date +</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'primary_release_date.desc'})}
+                        variant={'outlined'} color={'primary'} sx={{
+                    ...(activeButton === 'primary_release_date.desc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>release date -</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'vote_count.asc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'vote_count.asc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>vote count +</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'vote_count.desc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'vote_count.desc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>vote count -</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'revenue.asc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'revenue.asc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>revenue +</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'revenue.desc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'revenue.desc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>revenue -</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'original_title.asc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'original_title.asc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>original title +</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'original_title.desc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'original_title.desc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>original title -</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'title.asc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'title.asc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>title +</Button>
+                <Button onClick={() => handleButtonClick({queryValue: 'title.desc'})} variant={'outlined'}
+                        color={'primary'} sx={{
+                    ...(activeButton === 'title.desc' && {
+                        backgroundColor: buttonActivity,
+                        color: activeButtonTextColor
+                    }), marginTop: '6px'
+                }}>title -</Button>
+            </ThemeProvider>
+        </div>
     );
 };
 

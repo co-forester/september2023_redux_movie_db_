@@ -1,0 +1,61 @@
+.FooterLight{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vh;
+    padding: 0 40px 0 40px;
+    background-color: #7f7fa8;
+    height: 50px;
+}
+.FooterDark{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vh;
+    padding: 0 40px 0 40px;
+    background: #4d487f;
+    height: 50px;
+}
+.buttonBox{
+
+}
+.buttonDark{
+    display: flex;
+    color: #f1f599;
+    background: #585575;
+    box-shadow: #6969c2 5px 5px 5px ;
+    margin: 20px;
+    padding: 4px 7px 4px 7px;
+    border-radius: 6px;
+}
+.buttonLight{
+    display: flex;
+    background: #908bbb;
+    box-shadow: #41419b 3px 3px 3px ;
+    margin: 20px;
+    padding: 4px 7px 4px 7px;
+    border-radius: 6px;
+}
+.buttonLight:hover{
+    cursor: pointer;
+    background-color: #a6a5a5;
+}
+.buttonDark:hover{
+    cursor: pointer;
+    background-color: #a6a5a5;
+}
+.buttonDark[class='active']{
+    cursor: pointer;
+    background-color: #6f6f6f;
+}
+.buttonLight[class='active']{
+
+    background-color: #665478;
+}
+.buttonDark:active{
+    background-color: #9c9b9b;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+}

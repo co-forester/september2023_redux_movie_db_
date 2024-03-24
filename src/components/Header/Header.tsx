@@ -1,11 +1,10 @@
 import React from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
-import {Avatar, createTheme, Typography} from "@mui/material";
+import {Avatar, Typography} from "@mui/material";
 
 import css from './Header.module.css'
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {themeActions} from "../../Redux";
-import {fontGrid} from "@mui/material/styles/cssUtils";
 
 const Header = () => {
     const theme = useAppSelector(state => state.theme.theme);
@@ -33,7 +32,6 @@ const Header = () => {
                 <Avatar className={theme ? css.avatarLight : css.avatarDark} alt="Remy Sharp" src="./icon8-gjbcr.svg"
                         sx={{width: 36, height: 36}}/>
             </div>
-
         </div>
     );
 };

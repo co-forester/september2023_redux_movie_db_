@@ -20,6 +20,7 @@ const Movies: FC<IPops> = ({movies}) => {
                 <div className={theme ? css.MoviesLight : css.MoviesDark}>
                     {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
                 </div>
+                <PaginationBlock/>
             </div>
         </div>
     );

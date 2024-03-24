@@ -2,11 +2,13 @@
     background: #8c88aa;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 5vh;
 }
 .MoviesDark{
     background: #1d1a40;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 5vh;
 }
 .MoviesListBox{
     display: flex;
