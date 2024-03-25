@@ -4,7 +4,7 @@ import {Avatar, Typography} from "@mui/material";
 
 import css from './Header.module.css'
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {themeActions} from "../../Redux";
+import {themeActions} from "../../redux";
 
 const Header = () => {
     const theme = useAppSelector(state => state.theme.theme);

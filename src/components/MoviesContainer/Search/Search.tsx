@@ -4,7 +4,7 @@ import {CircularProgress, Container, createTheme, TextField, ThemeProvider} from
 
 import css from './Search.module.css'
 import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {movieActions} from "../../../Redux";
+import {movieActions} from "../../../redux";
 import {Movies} from "../Movies";
 
 const Search = () => {

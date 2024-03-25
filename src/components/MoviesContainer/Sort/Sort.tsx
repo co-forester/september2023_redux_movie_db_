@@ -4,7 +4,7 @@ import {useSearchParams} from "react-router-dom";
 
 import css from './Sort.module.css';
 import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {movieActions} from "../../../Redux";
+import {movieActions} from "../../../redux";
 
 
 const Sort = () => {

@@ -4,7 +4,7 @@ import {CircularProgress} from "@mui/material";
 
 import {Movies} from "../Movies";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {movieActions} from "../../../Redux";
+import {movieActions} from "../../../redux";
 import css from './MoviesList.module.css'
 import {Sort} from "../Sort";
 

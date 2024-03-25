@@ -4,7 +4,7 @@ import {Typography} from "@mui/material";
 
 import css from './Footer.module.css';
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {themeActions} from "../../Redux";
+import {themeActions} from "../../redux";
 
 const Footer = () => {
     const theme = useAppSelector(state => state.theme.theme);

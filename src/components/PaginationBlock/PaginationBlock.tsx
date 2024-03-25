@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from 'react';
+import React from 'react';
 import {useSearchParams} from "react-router-dom";
 import {createTheme, Pagination, ThemeProvider} from "@mui/material";
 

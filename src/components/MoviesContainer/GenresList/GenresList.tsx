@@ -5,7 +5,7 @@ import {Backdrop, CircularProgress} from "@mui/material";
 import css from './GenresList.module.css'
 import {Movies} from "../Movies";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {movieActions} from "../../../Redux";
+import {movieActions} from "../../../redux";
 import {Genre} from "../Genre";
 
 const GenresList = () => {
